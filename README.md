@@ -3,8 +3,8 @@
 Welcome to my GitHub! I’m passionate about creativity, technology, and education.  
 
 🌐 **Website:** [canbekcan.com](https://canbekcan.com)  
-📧 **Contact:** [your-email@example.com](mailto:your-email@example.com)  
-💼 **LinkedIn:** [Your LinkedIn Profile](https://linkedin.com/in/your-profile)  
+📧 **Contact:** [can@canbekcan.com](mailto:can@canbekcan.com)  
+💼 **LinkedIn:** [Can Bekcan](www.linkedin.com/in/canbekcan)  
 
 ## 🚀 About Me  
 - **Educator**: Teaching topics like Social Media Management and Video Content Production.  
