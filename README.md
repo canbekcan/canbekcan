@@ -22,7 +22,8 @@ Welcome to my GitHub! I’m passionate about creativity, technology, and educati
 - Passionate about mentoring and guiding students in digital innovation.  
 - Continuously exploring ways to blend creativity and technology.  
 
-<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="canbekcan" data-color="#FFDD00" data-emoji="☕"  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+
+[![](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://www.buymeacoffee.com/canbekcan)
 ---
 
 💡 _“The best way to predict the future is to create it.”_  
