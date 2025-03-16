@@ -23,7 +23,10 @@ Welcome to my GitHub! I’m passionate about creativity, technology, and educati
 - Continuously exploring ways to blend creativity and technology.  
 
 
-[![](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://www.buymeacoffee.com/canbekcan)
+
+![GitHub Sponsors](https://img.shields.io/github/sponsors/canbekcan?style=flat&label=Sponsor%20)
+[![Static Badge](https://img.shields.io/badge/-Support-ffff00?style=flat&label=%E2%98%95%EF%B8%8F)](https://www.buymeacoffee.com/canbekcan)
+
 ---
 
 💡 _“The best way to predict the future is to create it.”_  
