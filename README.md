@@ -9,7 +9,7 @@ GitHub'ıma hoş geldiniz! Burada yapmış olduğum çalışmalardan örnekler g
 - **Eğitimci**: Doğu Akdeniz Üniversitesi İletişim Fakültesi Yeni Medya ve İletişim Bölümü'nde öğretim üyesiyim. Teorik ve pratik bilgi birikimimi öğrencilerle paylaşıyorum.
 - **Teknoloji Meraklısı**: Yapay zeka, makine öğrenimi ve otomasyona odaklanmış bir teknoloji meraklısıyım. Bu alanlarda kendimi sürekli olarak geliştiriyorum.
 - **İçerik Oluşturucu**: Öğrencilerin ve profesyonellerin dijital platformlar aracılığıyla etkili bir şekilde iletişim kurmalarına yardımcı olmak için içerik oluşturuyorum.
-- **Veri Kazıma ve Analiz**: Sosyal bilimlerin her alanı için veri kazıma ve analiz konularında uzmanlaşmış bir araştırmacıyım.
+- **[Veri Kazıma ve Analiz](https://buymeacoffee.com/canbekcan/e/380651)**: Sosyal bilimlerin her alanı için veri kazıma ve analiz konularında uzmanlaşmış bir araştırmacıyım.
 
 ## 📚 Güncel Projeler
 - Bana Bir Sebep Ver adında öğrencileri motive edici bir topluluğu yönetiyorum.
