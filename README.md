@@ -2,7 +2,6 @@
 GitHub'ıma hoş geldiniz! Burada yapmış olduğum çalışmalardan örnekler görebilirsiniz. Ayrıca, benimle iletişime geçmekten çekinmeyin.
 
 🌐 **Web sitesi**: [canbekcan.com](https://www.canbekcan.com)
-
 📧 **İletişim**: [can@canbekcan.com](mailto:can@canbekcan.com)
 
 ## 🚀 Hakkımda
@@ -18,7 +17,7 @@ GitHub'ıma hoş geldiniz! Burada yapmış olduğum çalışmalardan örnekler g
 - Dijital medya ve iletişim konularında içerik oluşturuyorum.
 
 ## 🌟 Öne Çıkanlar
-- [survey.bekcan.com](https://survey.bekcan.com): Anketler oluşturarak veri topluyorum.
+- [survey.bekcan.com](https://survey.bekcan.com) üzerinden anketler oluşturarak veri topluyorum.
 - GitHub projeleri geliştiriyorum ve paylaşıyorum.
 
 
