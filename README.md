@@ -30,5 +30,5 @@ GitHub'ıma hoş geldiniz! Burada yapmış olduğum çalışmalardan örnekler g
 
 ---
 
-💡 “Geleceği tahmin etmenin en iyi yolu onu yaratmaktır.”
+💡 “Geleceği tahmin etmenin en iyi yolu onu yaratmaktır.”<br/>
 Depolarımı keşfetmekten, bağlantı kurmaktan veya fikirlerinizi paylaşmaktan çekinmeyin!
