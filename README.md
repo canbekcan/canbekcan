@@ -1,8 +1,9 @@
 # 👋 Merhaba! Ben Can Bekcan
 GitHub'ıma hoş geldiniz! Burada yapmış olduğum çalışmalardan örnekler görebilirsiniz. Ayrıca, benimle iletişime geçmekten çekinmeyin.
 
-🌐 **Web sitesi**: [canbekcan.com](https://www.canbekcan.com)
+🌐 **Web sitesi**: [canbekcan.com](https://www.canbekcan.com) 
 📧 **İletişim**: [can@canbekcan.com](mailto:can@canbekcan.com)
+
 
 ## 🚀 Hakkımda
 - **Eğitimci**: Doğu Akdeniz Üniversitesi İletişim Fakültesi Yeni Medya ve İletişim Bölümü'nde öğretim üyesiyim. Teorik ve pratik bilgi birikimimi öğrencilerle paylaşıyorum.
