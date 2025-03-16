@@ -4,7 +4,7 @@ Welcome to my GitHub! I’m passionate about creativity, technology, and educati
 
 🌐 **Website:** [canbekcan.com](https://canbekcan.com)  
 📧 **Contact:** [can@canbekcan.com](mailto:can@canbekcan.com)  
-💼 **LinkedIn:** [Can Bekcan](www.linkedin.com/in/canbekcan)  
+
 
 ## 🚀 About Me  
 - **Educator**: Teaching topics like Social Media Management and Video Content Production.  
