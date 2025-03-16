@@ -23,9 +23,11 @@ Welcome to my GitHub! I’m passionate about creativity, technology, and educati
 - Continuously exploring ways to blend creativity and technology.  
 
 
-
-![GitHub Sponsors](https://img.shields.io/github/sponsors/canbekcan?style=flat&label=Sponsor%20)
-[![Static Badge](https://img.shields.io/badge/-Support-ffff00?style=flat&label=%E2%98%95%EF%B8%8F)](https://www.buymeacoffee.com/canbekcan)
+![GitHub Visiter](https://visitor-badge.laobi.icu/badge?page_id=canbekcan&left_text=Ziyaret%C3%A7i)
+![GitHub followers](https://img.shields.io/github/followers/canbekcan?style=flat&label=Takip%C3%A7i)
+![Discord](https://img.shields.io/discord/705088905292152852?style=flat&label=Aktif&cacheSeconds=1000)
+![GitHub Sponsors](https://img.shields.io/github/sponsors/canbekcan?style=flat&label=Destekçi)
+[![Static Badge](https://img.shields.io/badge/-Destekle-ffff00?style=flat&label=%E2%98%95%EF%B8%8F)](https://www.buymeacoffee.com/canbekcan)
 
 ---
 
