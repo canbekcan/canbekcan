@@ -1,7 +1,7 @@
 # 👋 Merhaba! Ben Can Bekcan
 GitHub'ıma hoş geldiniz! Burada yapmış olduğum çalışmalardan örnekler görebilirsiniz. Ayrıca, benimle iletişime geçmekten çekinmeyin.
 
-🌐 **Web sitesi**: [canbekcan.com](https://www.canbekcan.com) 
+🌐 **Web sitesi**: [canbekcan.com](https://www.canbekcan.com)<br/>
 📧 **İletişim**: [can@canbekcan.com](mailto:can@canbekcan.com)
 
 
