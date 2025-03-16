@@ -1,26 +1,24 @@
-# 👋 Hello! I'm Can Bekcan  
+# 👋 Merhaba! Ben Can Bekcan
+GitHub'ıma hoş geldiniz! Burada yapmış olduğum çalışmalardan örnekler görebilirsiniz. Ayrıca, benimle iletişime geçmekten çekinmeyin.
 
-Welcome to my GitHub! I’m passionate about creativity, technology, and education.  
+🌐 **Web sitesi**: [canbekcan.com](https://www.canbekcan.com)
+📧 **İletişim**: [can@canbekcan.com](mailto:can@canbekcan.com)
 
-🌐 **Website:** [canbekcan.com](https://canbekcan.com)  
-📧 **Contact:** [can@canbekcan.com](mailto:can@canbekcan.com)  
+## 🚀 Hakkımda
+- **Eğitimci**: Doğu Akdeniz Üniversitesi İletişim Fakültesi Yeni Medya ve İletişim Bölümü'nde öğretim üyesiyim. Teorik ve pratik bilgi birikimimi öğrencilerle paylaşıyorum.
+- **Teknoloji Meraklısı**: Yapay zeka, makine öğrenimi ve otomasyona odaklanmış bir teknoloji meraklısıyım. Bu alanlarda kendimi sürekli olarak geliştiriyorum.
+- **İçerik Oluşturucu**: Öğrencilerin ve profesyonellerin dijital platformlar aracılığıyla etkili bir şekilde iletişim kurmalarına yardımcı olmak için içerik oluşturuyorum.
+- **Veri Kazıma ve Analiz**: Sosyal bilimlerin her alanı için veri kazıma ve analiz konularında uzmanlaşmış bir araştırmacıyım.
 
+## 📚 Güncel Projeler
+- Bana Bir Sebep Ver adında öğrencileri motive edici bir topluluğu yönetiyorum.
+- Akademik çalışmalar için veri kazıma ve analiz konularında Python komut dosyaları geliştiriyorum.
+- Yapay zeka ve makine öğrenimi konularında öğrencilere mentorluk yapıyorum.
+- Dijital medya ve iletişim konularında içerik oluşturuyorum.
 
-## 🚀 About Me  
-- **Educator**: Teaching topics like Social Media Management and Video Content Production.  
-- **Tech Enthusiast**: Focused on AI, machine learning, and automation.  
-- **Content Creator**: Helping students and professionals communicate effectively through digital platforms.  
-- **Developer**: Building tools and bots to streamline workflows and enhance user experiences.  
-
-## 📚 Current Projects  
-- Developing **AI-powered Discord Bots** for education and engagement.  
-- Teaching students to master **storytelling, editing**, and modern digital tools.  
-- Organizing **creative competitions** to inspire and unite communities.  
-
-## 🌟 Highlights  
-- Successfully implemented database-backed Python scripts for web scraping and analysis.  
-- Passionate about mentoring and guiding students in digital innovation.  
-- Continuously exploring ways to blend creativity and technology.  
+## 🌟 Öne Çıkanlar
+- [survey.bekcan.com](https://survey.bekcan.com): Anketler oluşturarak veri topluyorum.
+- GitHub projeleri geliştiriyorum ve paylaşıyorum.
 
 
 ![GitHub Visiter](https://visitor-badge.laobi.icu/badge?page_id=canbekcan&left_text=Ziyaret%C3%A7i)
@@ -31,5 +29,5 @@ Welcome to my GitHub! I’m passionate about creativity, technology, and educati
 
 ---
 
-💡 _“The best way to predict the future is to create it.”_  
-Feel free to explore my repositories, connect, or share ideas!
+💡 “Geleceği tahmin etmenin en iyi yolu onu yaratmaktır.”
+Depolarımı keşfetmekten, bağlantı kurmaktan veya fikirlerinizi paylaşmaktan çekinmeyin!
