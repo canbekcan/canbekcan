@@ -12,7 +12,7 @@ GitHub'ıma hoş geldiniz! Burada yapmış olduğum çalışmalardan örnekler g
 - **[Veri Kazıma ve Analiz](https://buymeacoffee.com/canbekcan/e/380651)**: Sosyal bilimlerin her alanı için veri kazıma ve analiz konularında uzmanlaşmış bir araştırmacıyım.
 
 ## 📚 Güncel Projeler
-- Bana Bir Sebep Ver adında öğrencileri motive edici bir topluluğu yönetiyorum.
+- [Bana Bir Sebep Ver](https://github.com/BanaBirSebepVer) adında öğrencileri motive edici bir topluluğu yönetiyorum.
 - Akademik çalışmalar için veri kazıma ve analiz konularında Python komut dosyaları geliştiriyorum.
 - Yapay zeka ve makine öğrenimi konularında öğrencilere mentorluk yapıyorum.
 - Dijital medya ve iletişim konularında içerik oluşturuyorum.
@@ -20,6 +20,10 @@ GitHub'ıma hoş geldiniz! Burada yapmış olduğum çalışmalardan örnekler g
 ## 🌟 Öne Çıkanlar
 - [survey.bekcan.com](https://survey.bekcan.com) üzerinden anketler oluşturarak veri topluyorum.
 - GitHub projeleri geliştiriyorum ve paylaşıyorum.
+  - [GoogleSearch](https://github.com/BanaBirSebepVer/GoogleSearch)
+  - [KanallarYouTube](https://github.com/BanaBirSebepVer/KanallarYoutube)
+
+
 
 
 ![GitHub Visiter](https://visitor-badge.laobi.icu/badge?page_id=canbekcan&left_text=Ziyaret%C3%A7i)
