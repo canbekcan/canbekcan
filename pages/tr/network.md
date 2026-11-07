@@ -57,13 +57,19 @@ active_nav: network
              data-local-version="{{ local_tag }}"
              data-local-date="{{ local_date }}"
              data-upstream-url="https://raw.githubusercontent.com/BanaBirSebepVer/Academy/main/_data/version.yml"
-             data-lang="{{ current_lang }}">
+             data-msg-pill-uptodate="{{ locale.ui.version_pill_uptodate | default: 'Güncel' }}"
+             data-msg-pill-update="{{ locale.ui.version_pill_update | default: 'Güncelle' }}"
+             data-msg-pill-critical="{{ locale.ui.version_pill_critical | default: 'Kritik' }}"
+             data-msg-uptodate="{{ locale.ui.version_text_uptodate | default: 'En son sürüm' }}"
+             data-msg-new-release="{{ locale.ui.version_text_new_release | default: 'Yeni sürüm: %s' }}"
+             data-msg-patch-available="{{ locale.ui.version_text_patch_available | default: 'Yeni derleme mevcut' }}"
+             data-msg-critical="{{ locale.ui.version_text_critical | default: 'Kritik: %s' }}">
           <div class="version-header">
             <h4 class="version-title">
               <i class="fa fa-code-fork"></i> {{ locale.ui.version_title | default: "Sistem Versiyonu" }}
             </h4>
             <span class="version-status-pill" id="versionStatusPill">
-              Güncel
+              {{ locale.ui.version_pill_uptodate | default: "Güncel" }}
             </span>
           </div>
           <div class="version-meta">
@@ -77,7 +83,7 @@ active_nav: network
             </div>
           </div>
           <div class="version-status-text" id="versionStatusText">
-            <i class="fa fa-check-circle"></i> <span>Güncel</span>
+            <i class="fa fa-check-circle"></i> <span>{{ locale.ui.version_text_uptodate | default: "Güncel" }}</span>
           </div>
         </div>
       </div>
@@ -168,113 +174,10 @@ active_nav: network
       <div class="row network-grid" id="networkGrid">
         <div id="networkLoading" class="network-loading-state text-center" style="padding: 50px 15px; width: 100%;">
           <i class="fa fa-spinner fa-spin fa-2x" style="color: #2563eb; margin-bottom: 12px; display: inline-block;"></i>
-          <p class="text-muted" style="margin-bottom: 0;">Akademik ağ üyeleri yükleniyor...</p>
+          <p class="text-muted" style="margin-bottom: 0;">{{ locale.ui.loading_members | default: "Akademik ağ üyeleri yükleniyor..." }}</p>
         </div>
       </div>
 
     </div>
   </div>
 </div>
-
-<script>
-(function() {
-  function checkEngineVersion() {
-    var card = document.getElementById('versionStatusCard');
-    if (!card || card.getAttribute('data-version-checked') === 'true') return;
-    card.setAttribute('data-version-checked', 'true');
-
-    var localVer = card.getAttribute('data-local-version') || 'v0.1.1';
-    var localDateStr = card.getAttribute('data-local-date') || '';
-    var upstreamUrl = card.getAttribute('data-upstream-url') || 'https://raw.githubusercontent.com/BanaBirSebepVer/Academy/main/_data/version.yml';
-    var lang = card.getAttribute('data-lang') || 'tr';
-
-    var pill = document.getElementById('versionStatusPill');
-    var statusText = document.getElementById('versionStatusText');
-
-    function parseYaml(str) {
-      var res = {};
-      var lines = str.split('\n');
-      for (var i = 0; i < lines.length; i++) {
-        var m = lines[i].match(/^\s*([a-zA-Z0-9_-]+)\s*:\s*["']?(.*?)["']?\s*$/);
-        if (m) res[m[1]] = m[2].trim();
-      }
-      return res;
-    }
-
-    function parseSemVer(v) {
-      return (v || '').replace(/^v/i, '').split('.').map(function(n) { return parseInt(n, 10) || 0; });
-    }
-
-    function compareSemVer(v1, v2) {
-      var p1 = parseSemVer(v1);
-      var p2 = parseSemVer(v2);
-      var len = Math.max(p1.length, p2.length);
-      for (var i = 0; i < len; i++) {
-        var n1 = p1[i] || 0;
-        var n2 = p2[i] || 0;
-        if (n1 > n2) return 1;
-        if (n1 < n2) return -1;
-      }
-      return 0;
-    }
-
-    function parseDateMs(d) {
-      if (!d) return 0;
-      var ms = Date.parse(d);
-      if (!isNaN(ms)) return ms;
-      var m = d.match(/(\d{4})-(\d{2})-(\d{2})/);
-      if (m) return new Date(m[1], m[2] - 1, m[3]).getTime();
-      return 0;
-    }
-
-    function setStatus(type, pillLabel, textHtml) {
-      card.classList.remove('version-status-ok', 'version-status-warn', 'version-status-danger');
-      card.classList.add('version-status-' + type);
-      if (pill) pill.textContent = pillLabel;
-      if (statusText) statusText.innerHTML = textHtml;
-    }
-
-    fetch(upstreamUrl, { cache: 'no-cache' })
-      .then(function(res) {
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        return res.text();
-      })
-      .then(function(yamlText) {
-        var upstream = parseYaml(yamlText);
-        var upstreamVer = upstream.tag || upstream.version || '';
-        var upstreamDateStr = upstream.build_date || '';
-
-        if (!upstreamVer && !upstreamDateStr) return;
-
-        var vDiff = compareSemVer(upstreamVer, localVer);
-        var localDate = parseDateMs(localDateStr);
-        var upstreamDate = parseDateMs(upstreamDateStr);
-
-        var repoUrl = 'https://github.com/BanaBirSebepVer/Academy';
-
-        if (vDiff > 0) {
-          var pUp = parseSemVer(upstreamVer);
-          var pLoc = parseSemVer(localVer);
-          if ((pUp[0] || 0) > (pLoc[0] || 0)) {
-            setStatus('danger', 'Kritik', '<i class="fa fa-exclamation-circle"></i> <a href="' + repoUrl + '/releases" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Kritik: ' + upstreamVer + '</a>');
-          } else {
-            setStatus('warn', 'Güncelle', '<i class="fa fa-arrow-circle-up"></i> <a href="' + repoUrl + '/releases" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Yeni sürüm: ' + upstreamVer + '</a>');
-          }
-        } else if (vDiff === 0 && upstreamDate > (localDate + (3600 * 1000))) {
-          setStatus('warn', 'Güncelle', '<i class="fa fa-arrow-circle-up"></i> <a href="' + repoUrl + '" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Yeni derleme mevcut</a>');
-        } else {
-          setStatus('ok', 'Güncel', '<i class="fa fa-check-circle"></i> <span>En son sürüm</span>');
-        }
-      })
-      .catch(function(err) {
-        console.warn('[Academy Version] Could not check upstream version.yml:', err);
-      });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', checkEngineVersion);
-  } else {
-    checkEngineVersion();
-  }
-})();
-</script>

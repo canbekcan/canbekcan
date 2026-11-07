@@ -273,7 +273,14 @@ export default function initNetwork() {
     const localVer = card.getAttribute('data-local-version') || 'v0.1.1';
     const localDateStr = card.getAttribute('data-local-date') || '';
     const upstreamUrl = card.getAttribute('data-upstream-url') || 'https://raw.githubusercontent.com/BanaBirSebepVer/Academy/main/_data/version.yml';
-    const lang = card.getAttribute('data-lang') || 'tr';
+
+    const msgPillUptodate = card.getAttribute('data-msg-pill-uptodate') || 'Up to date';
+    const msgPillUpdate   = card.getAttribute('data-msg-pill-update') || 'Update';
+    const msgPillCritical = card.getAttribute('data-msg-pill-critical') || 'Critical';
+    const msgUptodate     = card.getAttribute('data-msg-uptodate') || 'Up to date';
+    const msgNewRelease   = card.getAttribute('data-msg-new-release') || 'New release: %s';
+    const msgPatch        = card.getAttribute('data-msg-patch-available') || 'New build available';
+    const msgCritical     = card.getAttribute('data-msg-critical') || 'Critical: %s';
 
     const pill = document.getElementById('versionStatusPill');
     const statusText = document.getElementById('versionStatusText');
@@ -343,30 +350,16 @@ export default function initNetwork() {
           const pUp = parseSemVer(upstreamVer);
           const pLoc = parseSemVer(localVer);
           if ((pUp[0] || 0) > (pLoc[0] || 0)) {
-            if (lang === 'tr') {
-              setStatus('danger', 'Kritik', '<i class="fa fa-exclamation-circle"></i> <a href="' + repoUrl + '/releases" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Kritik: ' + upstreamVer + '</a>');
-            } else {
-              setStatus('danger', 'Critical', '<i class="fa fa-exclamation-circle"></i> <a href="' + repoUrl + '/releases" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Critical: ' + upstreamVer + '</a>');
-            }
+            const text = msgCritical.replace('%s', upstreamVer);
+            setStatus('danger', msgPillCritical, `<i class="fa fa-exclamation-circle"></i> <a href="${repoUrl}/releases" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">${escapeHtml(text)}</a>`);
           } else {
-            if (lang === 'tr') {
-              setStatus('warn', 'Güncelle', '<i class="fa fa-arrow-circle-up"></i> <a href="' + repoUrl + '/releases" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Yeni sürüm: ' + upstreamVer + '</a>');
-            } else {
-              setStatus('warn', 'Update', '<i class="fa fa-arrow-circle-up"></i> <a href="' + repoUrl + '/releases" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">New release: ' + upstreamVer + '</a>');
-            }
+            const text = msgNewRelease.replace('%s', upstreamVer);
+            setStatus('warn', msgPillUpdate, `<i class="fa fa-arrow-circle-up"></i> <a href="${repoUrl}/releases" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">${escapeHtml(text)}</a>`);
           }
         } else if (vDiff === 0 && upstreamDate > (localDate + (3600 * 1000))) {
-          if (lang === 'tr') {
-            setStatus('warn', 'Güncelle', '<i class="fa fa-arrow-circle-up"></i> <a href="' + repoUrl + '" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Yeni derleme mevcut</a>');
-          } else {
-            setStatus('warn', 'Update', '<i class="fa fa-arrow-circle-up"></i> <a href="' + repoUrl + '" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">New build available</a>');
-          }
+          setStatus('warn', msgPillUpdate, `<i class="fa fa-arrow-circle-up"></i> <a href="${repoUrl}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">${escapeHtml(msgPatch)}</a>`);
         } else {
-          if (lang === 'tr') {
-            setStatus('ok', 'Güncel', '<i class="fa fa-check-circle"></i> <span>En son sürüm</span>');
-          } else {
-            setStatus('ok', 'Up to date', '<i class="fa fa-check-circle"></i> <span>Up to date</span>');
-          }
+          setStatus('ok', msgPillUptodate, `<i class="fa fa-check-circle"></i> <span>${escapeHtml(msgUptodate)}</span>`);
         }
       })
       .catch(err => {
