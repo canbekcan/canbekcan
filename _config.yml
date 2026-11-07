@@ -8,22 +8,26 @@
 # 1. Personal & Academic Profile
 title: "Can Bekcan"
 author: "Can Bekcan"
-email: "can.bekcan@em.edu.tr"
-description: "Akademik CV & Araştırma Portföyü - Doğu Akdeniz Üniversitesi"
-institution: "Doğu Akdeniz Üniversitesi"
-department: "İletişim Fakültesi"
-avatar: "/assets/images/Can-Bekcan-PADI.jpg"
+email: "can.bekcan@emu.edu.tr"
+description: "Academic CV & Research Portfolio - Eastern Mediterranean University"
+institution: "Eastern Mediterranean University"
+faculty: "Faculty of Communication and Media Studies"
+department: "Department of New Media and Journalism"
+fields: "New Media and Communnnication"
+keywords: ["Computational Methods", "Digital Media", "Network Analysis"]
+country: "Turkish Republic of Northern Cyprus"
+avatar: "https://github.canbekcan.com/assets/images/Can-Bekcan-PADI.jpg"
 
 # 2. Site URL & Hosting
-# - Custom domain (e.g. example.com):            baseurl: ""          | url: "https://example.com"
-# - Project site (e.g. username.github.io/repo): baseurl: "/Academy"  | url: "https://BanaBirSebepVer.github.io"
+# - Custom domain or user site (e.g. username.github.io):  baseurl: ""          | url: "https://example.com"
+# - Project site (e.g. username.github.io/repo):           baseurl: "/Academy"  | url: "https://BanaBirSebepVer.github.io"
 baseurl: ""
 url: "https://github.canbekcan.com"
 repository: "canbekcan/canbekcan"
 github_repo: "https://github.com/canbekcan/canbekcan"
 google_analytics: ""
 encoding: utf-8
-favicon: "/assets/images/Can-Bekcan-PADI.jpg"
+favicon: "/assets/images/favicon.ico"
 
 # 3. Multilingual Settings
 default_lang: "tr"
