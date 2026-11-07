@@ -265,7 +265,119 @@ export default function initNetwork() {
     applyFilter();
   }
 
-  // 1. Check local session cache first for instant render
+  function checkEngineVersion() {
+    const card = document.getElementById('versionStatusCard');
+    if (!card || card.getAttribute('data-version-checked') === 'true') return;
+    card.setAttribute('data-version-checked', 'true');
+
+    const localVer = card.getAttribute('data-local-version') || 'v0.1.1';
+    const localDateStr = card.getAttribute('data-local-date') || '';
+    const upstreamUrl = card.getAttribute('data-upstream-url') || 'https://raw.githubusercontent.com/BanaBirSebepVer/Academy/main/_data/version.yml';
+    const lang = card.getAttribute('data-lang') || 'tr';
+
+    const pill = document.getElementById('versionStatusPill');
+    const statusText = document.getElementById('versionStatusText');
+
+    function parseYaml(str) {
+      const res = {};
+      const lines = str.split('\n');
+      for (let i = 0; i < lines.length; i++) {
+        const m = lines[i].match(/^\s*([a-zA-Z0-9_-]+)\s*:\s*["']?(.*?)["']?\s*$/);
+        if (m) res[m[1]] = m[2].trim();
+      }
+      return res;
+    }
+
+    function parseSemVer(v) {
+      return (v || '').replace(/^v/i, '').split('.').map(n => parseInt(n, 10) || 0);
+    }
+
+    function compareSemVer(v1, v2) {
+      const p1 = parseSemVer(v1);
+      const p2 = parseSemVer(v2);
+      const len = Math.max(p1.length, p2.length);
+      for (let i = 0; i < len; i++) {
+        const n1 = p1[i] || 0;
+        const n2 = p2[i] || 0;
+        if (n1 > n2) return 1;
+        if (n1 < n2) return -1;
+      }
+      return 0;
+    }
+
+    function parseDateMs(d) {
+      if (!d) return 0;
+      const ms = Date.parse(d);
+      if (!isNaN(ms)) return ms;
+      const m = d.match(/(\d{4})-(\d{2})-(\d{2})/);
+      if (m) return new Date(m[1], m[2] - 1, m[3]).getTime();
+      return 0;
+    }
+
+    function setStatus(type, pillLabel, textHtml) {
+      card.classList.remove('version-status-ok', 'version-status-warn', 'version-status-danger');
+      card.classList.add('version-status-' + type);
+      if (pill) pill.textContent = pillLabel;
+      if (statusText) statusText.innerHTML = textHtml;
+    }
+
+    fetch(upstreamUrl, { cache: 'no-cache' })
+      .then(res => {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.text();
+      })
+      .then(yamlText => {
+        const upstream = parseYaml(yamlText);
+        const upstreamVer = upstream.tag || upstream.version || '';
+        const upstreamDateStr = upstream.build_date || '';
+
+        if (!upstreamVer && !upstreamDateStr) return;
+
+        const vDiff = compareSemVer(upstreamVer, localVer);
+        const localDate = parseDateMs(localDateStr);
+        const upstreamDate = parseDateMs(upstreamDateStr);
+
+        const repoUrl = 'https://github.com/BanaBirSebepVer/Academy';
+
+        if (vDiff > 0) {
+          const pUp = parseSemVer(upstreamVer);
+          const pLoc = parseSemVer(localVer);
+          if ((pUp[0] || 0) > (pLoc[0] || 0)) {
+            if (lang === 'tr') {
+              setStatus('danger', 'Kritik', '<i class="fa fa-exclamation-circle"></i> <a href="' + repoUrl + '/releases" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Kritik: ' + upstreamVer + '</a>');
+            } else {
+              setStatus('danger', 'Critical', '<i class="fa fa-exclamation-circle"></i> <a href="' + repoUrl + '/releases" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Critical: ' + upstreamVer + '</a>');
+            }
+          } else {
+            if (lang === 'tr') {
+              setStatus('warn', 'Güncelle', '<i class="fa fa-arrow-circle-up"></i> <a href="' + repoUrl + '/releases" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Yeni sürüm: ' + upstreamVer + '</a>');
+            } else {
+              setStatus('warn', 'Update', '<i class="fa fa-arrow-circle-up"></i> <a href="' + repoUrl + '/releases" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">New release: ' + upstreamVer + '</a>');
+            }
+          }
+        } else if (vDiff === 0 && upstreamDate > (localDate + (3600 * 1000))) {
+          if (lang === 'tr') {
+            setStatus('warn', 'Güncelle', '<i class="fa fa-arrow-circle-up"></i> <a href="' + repoUrl + '" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Yeni derleme mevcut</a>');
+          } else {
+            setStatus('warn', 'Update', '<i class="fa fa-arrow-circle-up"></i> <a href="' + repoUrl + '" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">New build available</a>');
+          }
+        } else {
+          if (lang === 'tr') {
+            setStatus('ok', 'Güncel', '<i class="fa fa-check-circle"></i> <span>En son sürüm</span>');
+          } else {
+            setStatus('ok', 'Up to date', '<i class="fa fa-check-circle"></i> <span>Up to date</span>');
+          }
+        }
+      })
+      .catch(err => {
+        console.warn('[Academy Version] Could not check upstream version.yml:', err);
+      });
+  }
+
+  // 1. Check version status against upstream version.yml
+  checkEngineVersion();
+
+  // 2. Check local session cache first for instant render
   const cached = getCachedMembers();
   if (cached) {
     renderMembers(cached);
