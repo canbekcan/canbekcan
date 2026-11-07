@@ -16,15 +16,15 @@ department: "Department of Communication & Journalism"
 fields: "New Media and Communication"
 keywords: ["Computational Methods", "Digital Media", "Network Analysis"]
 country: "Turkish Republic of Northern Cyprus"
-avatar: "/assets/images/default-avatar.svg"
+avatar: "https://github.canbekcan.com/assets/images/Can-Bekcan-PADI.jpg"
 
 # 2. Site URL & Hosting
 # - Custom domain or user site (e.g. username.github.io):  baseurl: ""          | url: "https://example.com"
 # - Project site (e.g. username.github.io/repo):           baseurl: "/Academy"  | url: "https://BanaBirSebepVer.github.io"
-baseurl: "/Academy"
-url: "https://BanaBirSebepVer.github.io"
-repository: "BanaBirSebepVer/Academy"
-github_repo: "https://github.com/BanaBirSebepVer/Academy"
+baseurl: ""
+url: "https://github.canbekcan.com"
+repository: "canbekcan/canbekcan"
+github_repo: "https://github.com/canbekcan/canbekcan"
 google_analytics: ""
 encoding: utf-8
 favicon: "/assets/images/favicon.ico"
